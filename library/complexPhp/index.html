@@ -1,303 +1,268 @@
-# Welcome to Complex PHP 0.1 Beta Version
 
-Complex PHP v-0.1 is modified version of PHP  to make PHP and HTML more easier and responsive.
+<!DOCTYPE html>
+<html>
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Complex PHP</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
 
-# Why Complex PHP
-There are many reasons to use Complex PHP like:-
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="welcome-to-complex-php-0.1-beta-version">Welcome to Complex PHP 0.1 Beta Version</h1>
+<p>Complex PHP v-0.1 is modified version of PHP  to make PHP and HTML more easier and responsive.</p>
+<h1 id="why-complex-php">Why Complex PHP</h1>
+<p>There are many reasons to use Complex PHP like:-</p>
+<ul>
+<li>Include various of Basic Functions, Regex Function, SQL Functions and HTML functions.</li>
+<li>Better experience in writing HTML with many html functions to make your work more professional.</li>
+</ul>
+<h1 id="getting-started">Getting Started</h1>
+<h2 id="installation">Installation</h2>
+<p>Just include Complex PHP file in your php at the top of file.</p>
+<pre><code>include "complex.php"
+</code></pre>
+<h2 id="basic-functions-and-examples">Basic Functions and Examples</h2>
+<p>A simple example to use Complex PHP with html.</p>
+<p><strong>index.php</strong></p>
+<pre><code>&lt;?php
+    
+    include "complex.php";
+	
+	
+	html('home.php');
+?&gt;
+</code></pre>
+<p>Now We need home.php to load html file, <em><strong>Remember you can also use home.html file but this is highly not recommended due security issues.</strong></em></p>
+<p><strong>home.php</strong></p>
+<pre><code>&lt;html&gt;
 
-- Include various of Basic Functions, Regex Function, SQL Functions and HTML functions.
-- Better experience in writing HTML with many html functions to make your work more professional.
+    &lt;body&gt;
+		
+		&lt;div class="myClass"&gt;&lt;/div&gt;
+		
+    &lt;/body&gt;
 
+&lt;/html&gt;
+</code></pre>
+<p>Now, When we load <strong>index.php</strong> file it will give output like this :-</p>
+<pre><code>&lt;html&gt;&lt;body&gt;&lt;div class="myClass"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
+</code></pre>
+<p>As, We can see above output is different than our assumption but don’t worry using <code>html()</code> function will minify whole html file code.</p>
+<p>Let’s see unminfied output to understand more:-</p>
+<p><strong>index.php</strong></p>
+<pre><code>&lt;html&gt;
 
-# Getting Started
+    &lt;body&gt;
+		
+		&lt;div class="myClass"&gt;&lt;/div&gt;
+		
+    &lt;/body&gt;
 
-## Installation
+&lt;/html&gt;
+</code></pre>
+<p>This output is now completly cleaned to understand now let’s try some more functions to make html easier and proffesional.</p>
+<h2 id="how-to-write-php-in-html-file.">How to write PHP in html file.</h2>
+<p>Calling <code>html()</code> will allow you to load html file in PHP but here is the question <strong>How We are going to write PHP in our html file?</strong></p>
+<p>Let’s have a look :-</p>
+<p><strong>home.php</strong></p>
+<pre><code>&lt;html&gt;
+   
+   &lt;?php
+	    echo "This is php code";
+   ?&gt;
+    
+    &lt;body&gt;
+		
+		&lt;div class="myClass"&gt;&lt;/div&gt;
+		
+    &lt;/body&gt;
 
-Just include Complex PHP file in your php at the top of file.
+&lt;/html&gt;
+</code></pre>
+<p>Yeah, I am sure you know this already <em>but in complex php <strong>you can also write your php by using square brackets <code>[]</code> in html file</strong>, Lets have a look :-</em></p>
+<p><strong>home.php</strong></p>
+<pre><code>&lt;html&gt;
+   
+  [
+	    echo "This is php code";
+  ]
+    
+    &lt;body&gt;
+		
+		&lt;div class="myClass"&gt;&lt;/div&gt;
+		
+    &lt;/body&gt;
 
-    include "complex.php"
+&lt;/html&gt;
+</code></pre>
+<p>Yeah this is really cool, So lets explore more complex php features which will really impress you.</p>
+<h2 id="use-shortcode-for-functions"><strong>Use shortcode for functions</strong></h2>
+<p>You can save your time by using short functions in <code>[]</code>.</p>
+<p>For example if you want to echo some text, You can use this :-</p>
+<pre><code>[e: This is echo]
+</code></pre>
+<p><strong>home.php</strong></p>
+<pre><code>&lt;html&gt;
+   
+ [e: This is echo]
+    
+    &lt;body&gt;
+		
+		&lt;div class="myClass"&gt;&lt;/div&gt;
+		
+    &lt;/body&gt;
 
-## Basic Functions and Examples
+&lt;/html&gt;
+</code></pre>
+<p><strong>Output: home.php (Clean)</strong></p>
+<pre><code>&lt;html&gt;
+   
+ This is echo
+    
+    &lt;body&gt;
+		
+		&lt;div class="myClass"&gt;&lt;/div&gt;
+		
+    &lt;/body&gt;
 
-A simple example to use Complex PHP with html.
-
-**index.php**
-
-    <?php
-	    
-	    include "complex.php";
+&lt;/html&gt;
+</code></pre>
+<p>Makesure you understood many of basic concepts of complex php, Now lets know some conditions of complex php <code>[]</code>.</p>
+<p><strong>1. You can use <code>[]</code> and <code>&lt;?php ?&gt;</code>  both in your html code file.</strong></p>
+<p><strong>home.php</strong></p>
+<pre><code>&lt;html&gt;
+	&lt;body&gt;
+		&lt;h1&gt;
+			&lt;?php 
+				echo "This is H1";
+			?&gt;
+		&lt;/h1&gt;
+		&lt;h1&gt;
+			[
+				echo "This is H1";
+			]
+		&lt;/h1&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>2. You can’t use <code>[]</code> in  html file for html, javascript or css code, It will throw error.</strong></p>
+<p>For example:-</p>
+<p><strong>home.php</strong></p>
+<pre><code>&lt;html&gt;
+	&lt;body&gt;
+		&lt;style&gt;
+			input[type=text]
+			{	
+				background:pink;
+			}
+		&lt;/style&gt;
+	
+		&lt;input type="text" value="green"&gt;&lt;/input&gt;
+		
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>If you use <code>[]</code> for html, css or js like this:-</p>
+<pre><code>	   &lt;style&gt;
+			input[type=text]
+			{	
+				background:pink;
+			}
+		&lt;/style&gt;
+</code></pre>
+<p>It will throw error, <strong>So to prevent this error and use <code>[]</code> for html, css and js you have to use double square brackets <code>[[]]</code> like this :-</strong></p>
+<pre><code>   &lt;style&gt;
+			input[[type=text]]
+			{	
+				background:pink;
+			}
+	&lt;/style&gt;
+</code></pre>
+<p>Don’t worry output will be same as we want :-</p>
+<pre><code>    &lt;style&gt;
+			input[type=text]
+			{	
+				background:pink;
+			}
+	&lt;/style&gt;
+</code></pre>
+<p>Let’s understand with better example:-</p>
+<pre><code>&lt;html&gt;
+	&lt;body&gt;
+		&lt;style&gt;
+			input[[type=text]]
+			{	
+				background:pink;
+			}
+		&lt;/style&gt;
+	
+		&lt;input type="text" value="green"&gt;&lt;/input&gt;
+		
+		&lt;h1&gt;I like Sea Foods [[Fish]]&lt;/h1&gt; // Output: I like Sea Foods [Fish] 
+		
+		&lt;h1&gt;[[e: Fish]]&lt;/h1&gt; // Output: [e: Fish]
+		
+		&lt;h1&gt;[e: Fish]&lt;/h1&gt; // Output: Fish
 		
 		
-		html('home.php');
-	?>
-
-Now We need home.php to load html file, ***Remember you can also use home.html file but this is highly not recommended due security issues.***
-
-**home.php**
-
-    <html>
-    
-	    <body>
-			
-			<div class="myClass"></div>
-			
-	    </body>
-	
-	</html>
+		&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt;&lt;/script&gt;
 		
-Now, When we load **index.php** file it will give output like this :-
-
-    <html><body><div class="myClass"></div></body></html>
-
-As, We can see above output is different than our assumption but don't worry using `html()` function will minify whole html file code.
-
-Let's see unminfied output to understand more:-
-
-**index.php**
-    
-    <html>
-    
-	    <body>
+		&lt;script&gt;
 			
-			<div class="myClass"></div>
+			$('h1')[[0]].css('background', 'green'); 
 			
-	    </body>
-	
-	</html>
-
- This output is now completly cleaned to understand now let's try some more functions to make html easier and proffesional.
-    
-
-## How to write PHP in html file.
-
-Calling `html()` will allow you to load html file in PHP but here is the question **How We are going to write PHP in our html file?**
-
-Let's have a look :-
-
-**home.php**
- 
-	<html>
-	   
-	   <?php
-		    echo "This is php code";
-	   ?>
-	    
-	    <body>
-			
-			<div class="myClass"></div>
-			
-	    </body>
-	
-	</html>
-
-Yeah, I am sure you know this already *but in complex php **you can also write your php by using square brackets `[]` in html file**, Lets have a look :-*
-
-**home.php**
-
-    <html>
-	   
-	  [
-		    echo "This is php code";
-	  ]
-	    
-	    <body>
-			
-			<div class="myClass"></div>
-			
-	    </body>
-	
-	</html>
-
-Yeah this is really cool, So lets explore more complex php features which will really impress you.
-
-## **Use shortcode for functions**
-
-You can save your time by using short functions in `[]`.
-
- For example if you want to echo some text, You can use this :-
-
-    [e: This is echo]
-
-**home.php**
-
-    <html>
-	   
-	 [e: This is echo]
-	    
-	    <body>
-			
-			<div class="myClass"></div>
-			
-	    </body>
-	
-	</html>
-**Output: home.php (Clean)**
-
-    <html>
-	   
-	 This is echo
-	    
-	    <body>
-			
-			<div class="myClass"></div>
-			
-	    </body>
-	
-	</html>
-
-Makesure you understood many of basic concepts of complex php, Now lets know some conditions of complex php `[]`.
-
-**1. You can use `[]` and `<?php ?>`  both in your html code file.**
-
-**home.php**
-
-    <html>
-		<body>
-			<h1>
-				<?php 
-					echo "This is H1";
-				?>
-			</h1>
-			<h1>
-				[
-					echo "This is H1";
-				]
-			</h1>
-		</body>
-	</html>
-**2. You can't use `[]` in  html file for html, javascript or css code, It will throw error.**
-
-For example:-
-
-**home.php**
-
-    <html>
-		<body>
-			<style>
-				input[type=text]
-				{	
-					background:pink;
-				}
-			</style>
+			// Output: $('h1')[0].css('background', 'green');
 		
-			<input type="text" value="green"></input>
-			
-		</body>
-	</html>
-
-If you use `[]` for html, css or js like this:-
-
-		   <style>
-				input[type=text]
-				{	
-					background:pink;
-				}
-			</style>
-It will throw error, **So to prevent this error and use `[]` for html, css and js you have to use double square brackets `[[]]` like this :-**
-
-       <style>
-				input[[type=text]]
-				{	
-					background:pink;
-				}
-		</style>
-Don't worry output will be same as we want :-
-
-        <style>
-				input[type=text]
-				{	
-					background:pink;
-				}
-		</style>
-Let's understand with better example:-
-
-    <html>
-		<body>
-			<style>
-				input[[type=text]]
-				{	
-					background:pink;
-				}
-			</style>
+		&lt;/script&gt;
 		
-			<input type="text" value="green"></input>
-			
-			<h1>I like Sea Foods [[Fish]]</h1> // Output: I like Sea Foods [Fish] 
-			
-			<h1>[[e: Fish]]</h1> // Output: [e: Fish]
-			
-			<h1>[e: Fish]</h1> // Output: Fish
-			
-			
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-			
-			<script>
-				
-				$('h1')[[0]].css('background', 'green'); 
-				
-				// Output: $('h1')[0].css('background', 'green');
-			
-			</script>
-			
-		</body>
-	</html>
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>So In easy words using <code>[]</code> will return to complex php but using <code>[[]]</code> will return to <code>[]</code> .</p>
+<p><strong>3. You can’t use <code>;</code> in short codes.</strong></p>
+<p>If you use <code>;</code>  in short codes it will return error,</p>
+<pre><code>[e: MyText;] // Will throw error
+</code></pre>
+<p>To prevent this use <code>;.</code>  or nothing.</p>
+<pre><code>[e: MyText] // output: MyText
+[e: MyText;.] // output: MyText
+</code></pre>
+<p>Keep in mind, above rule is just for complex php short codes not for php code.</p>
+<pre><code>[echo "MyText";] //output: MyText
+[echo "MyText";.] // Will throw error
+</code></pre>
+<p><strong>So In easy words <code>;.</code> is just used for complex php short codes.</strong></p>
+<pre><code>[e: "MyText"][e: "World"] // output: MyTextWorld
 
-So In easy words using `[]` will return to complex php but using `[[]]` will return to `[]` .
+[e: "MyText";. e: "World"] // output: MyTextWorld
 
-**3. You can't use `;` in short codes.**
+[e: "MyText";. echo "World";] // output: MyTextWorld
 
-If you use `;`  in short codes it will return error,
+[echo "Hello"; e: "MyText";. echo "World";] // output HelloMyTextWorld
+</code></pre>
+<p>So from above example, Hope you understood everythings about shortcode complex php.</p>
+<p><strong>4. You can’t use <code>[]</code> under complex php double brackets.</strong></p>
+<pre><code>[echo $_GET['q']; // Output: Error
+</code></pre>
+<p>You can’t use square brackets <code>[]</code> under complex php square brackets.</p>
+<p>If you want to use square brackets <code>[]</code> use <code>[[]]</code>to prevent error.</p>
+<pre><code>[echo $_GET[['q']]; ] // Output: $_GET['q']
+</code></pre>
+<p>Or, Just use php tag <code>&lt;?php ?&gt;</code> use square brackets <code>[]</code>.</p>
+<pre><code>&lt;?php
 
-    [e: MyText;] // Will throw error
-
-To prevent this use `;.`  or nothing.
-
-    [e: MyText] // output: MyText
-    [e: MyText;.] // output: MyText
-
-Keep in mind, above rule is just for complex php short codes not for php code.
-
-    [echo "MyText";] //output: MyText
-    [echo "MyText";.] // Will throw error
-
-**So In easy words `;.` is just used for complex php short codes.**
-
-    [e: "MyText"][e: "World"] // output: MyTextWorld
+    echo $_GET['q'];
     
-    [e: "MyText";. e: "World"] // output: MyTextWorld
-	
-	[e: "MyText";. echo "World";] // output: MyTextWorld
-	
-	[echo "Hello"; e: "MyText";. echo "World";] // output HelloMyTextWorld
-    
-So from above example, Hope you understood everythings about shortcode complex php.
+ ?&gt;
+</code></pre>
+<p><em>From above example, <em>We can understand that square brackets <code>[]</code> can be used under <code>&lt;?php ?&gt;</code> tags but If you want to use in complex php bracket use <code>[[]]</code>.</em></em></p>
+<h2 id="more-links--">More Links :-</h2>
+<p><a href="https://golzen.github.io/library/complexPhp/functions/"><strong>Complex Functions</strong></a><br>
+<a href="https://golzen.github.io/library/complexPhp/working"><strong>Working of Complex Php</strong></a><br>
+<a href="https://golzen.github.io/library/complexPhp/dev"><strong>Devloper of Complex Php</strong></a></p>
+</div>
+</body>
 
-**4. You can't use `[]` under complex php double brackets.**
-
-    [echo $_GET['q']; // Output: Error
-
-You can't use square brackets `[]` under complex php square brackets.
-
-If you want to use square brackets `[]` use `[[]]`to prevent error.
-
-    [echo $_GET[['q']]; ] // Output: $_GET['q']
-
-Or, Just use php tag `<?php ?>` use square brackets `[]`.
-
-    <?php
-    
-	    echo $_GET['q'];
-	    
-	 ?>
-
-*From above example, *We can understand that square brackets `[]` can be used under `<?php ?>` tags but If you want to use in complex php bracket use `[[]]`.**
-
-## More Links :-
-
-[**Complex Functions**](https://golzen.github.io/library/complexPhp/functions/)
-[**Working of Complex Php**](https://golzen.github.io/library/complexPhp/working)
-[**Devloper of Complex Php**](https://golzen.github.io/library/complexPhp/dev)
-
-
-
+</html>
