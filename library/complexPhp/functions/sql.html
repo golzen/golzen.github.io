@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sql( ) - Complex PHP</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="complex-php-v-0.1">Complex PHP v-0.1</h1>
+<p><strong>Links :-</strong></p>
+<p><a href="https://golzen.github.io/library/complexPhp/"><strong>Getting Started Complex Php</strong></a><br>
+<a href="https://golzen.github.io/library/complexPhp/working/index.html"><strong>Working of Complex Php</strong></a><br>
+<a href="https://golzen.github.io/library/complexPhp/dev/index.html"><strong>Devloper of Complex Php</strong></a></p>
+<h2 id="sql"><code>sql():</code></h2>
+<p><code>sql(query, onDone, onError, conn)</code> function is used to run mysql query.</p>
+<p><strong>Example:</strong></p>
+<pre><code> setDefaultConn("localhost", "root", "", "test");
+
+ sql("UPDATE entries SET name='John Doe' WHERE id='100'", 
+					function()
+					{
+						
+						echo "Record Updated Successfully.";
+					}, 
+					function($error){
+
+						echo "Failed to update record. Error: ".$error;
+					}
+				);
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code> Record Updated Successfully
+</code></pre>
+<p><strong>Example 2</strong></p>
+<p>Without <code>setDefaultConn()</code> it will throw error.</p>
+<pre><code>// setDefaultConn("localhost", "root", "", "test");
+
+ sql("UPDATE entries SET name='John Doe' WHERE id='100'", 
+					function()
+					{
+						
+						echo "Record Updated Successfully.";
+					}, 
+					function($error){
+
+						echo "Failed to update record. Error: ".$error;
+					}
+				);
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>// Error ComplexPHP: Database name is null, Use setDefaultConn() or newSqli() 
+</code></pre>
+<p>To use <code>sql()</code> without <code>setDefaultConn()</code> , just pass your new connection to <code>sql()</code>.</p>
+<pre><code> $myconn = new mysqli("localhost", "root", "", "test");
+
+ sql("UPDATE entries SET name='John Doe' WHERE id='100'", 
+					function()
+					{
+						
+						echo "Record Updated Successfully.";
+					}, 
+					function($error){
+
+						echo "Failed to update record. Error: ".$error;
+					},
+					$myconn
+				);
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>// Record Updated Successfully.
+</code></pre>
+</div>
+</body>
+
+</html>
